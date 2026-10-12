@@ -548,3 +548,10 @@ button{font-size:12px}
 /* Selected coding identity: {rf}. */
 .code-logo{width:88px;height:auto}
 @media(max-width:740px){.code-logo{width:72px}}
+/* Consistent project actions, aligned at the bottom of each card. */
+.carousel-copy{display:flex;flex-direction:column;align-items:flex-start;height:100%}
+.project-card-action{margin-top:auto;min-height:44px;display:flex;align-items:center;width:100%;padding-top:5px}
+.project-card-action .project-live{background:#fff;color:#345b87;border:1px solid #c6d4e5;border-radius:6px;font-size:13px;font-weight:600;padding:11px 18px;line-height:1.65;box-shadow:0 2px 4px #26364a04}
+.project-card-action .project-live:hover{background:#edf3fb;border-color:#8da9cb;color:#2967b9}
+.project-card-action .project-context{font-size:12px;color:#7c8899;margin:0;line-height:1.6}
+@media(max-width:740px){.project-card-action .project-live{font-size:12px;padding:10px 13px}}
