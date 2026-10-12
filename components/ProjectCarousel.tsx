@@ -124,7 +124,7 @@ export default function ProjectCarousel({
             <ul className="tags">{project.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
             <div className="project-card-action">
               {url && <a className="button project-live" href={url} target="_blank" rel="noopener noreferrer">View project ↗</a>}
-              {project.type === 'dashboard' && dissertationUrl && <a className="button project-dissertation" href={dissertationUrl} target="_blank" rel="noopener noreferrer">Read dissertation ↗</a>}
+              {project.type === 'dashboard' && dissertationUrl && <a className="button project-dissertation" href={assetPath(dissertationUrl)} target="_blank" rel="noopener noreferrer">Read dissertation ↗</a>}
               {!url && <p className="project-context">{project.type === 'lakehouse' ? 'Architecture research from the dashboard dissertation.' : 'Deployed interface · no public demo.'}</p>}
             </div>
           </div>
