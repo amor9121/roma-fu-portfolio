@@ -555,3 +555,19 @@ button{font-size:12px}
 .project-card-action .project-live:hover{background:#edf3fb;border-color:#8da9cb;color:#2967b9}
 .project-card-action .project-context{font-size:12px;color:#7c8899;margin:0;line-height:1.6}
 @media(max-width:740px){.project-card-action .project-live{font-size:12px;padding:10px 13px}}
+/* Readable orbit labels sit outside the architecture card. */
+.hero-slide .hero-orbit{inset:-34px -26px 16px;transform:none}
+.hero-slide .hero-orbit span{transform:none;background:#111c2d;color:#b8c9dc;font-size:12px;letter-spacing:.12em;padding:5px 10px;white-space:nowrap}
+.hero-slide .hero-orbit span:nth-child(1){top:-15px;left:14%;right:auto;bottom:auto}
+.hero-slide .hero-orbit span:nth-child(2){top:-15px;left:auto;right:10%;bottom:auto}
+.hero-slide .hero-orbit span:nth-child(3){bottom:-15px;left:25%;right:auto;top:auto}
+.hero-slide .hero-orbit:after{display:none}
+@media(max-width:740px){.hero-slide .hero-orbit{display:none}}
+.atm-project-photo{margin:0;height:100%;padding:18px;display:flex;flex-direction:column;background:#142236}
+.atm-photo-frame{position:relative;flex:1;overflow:hidden;border-radius:7px;border:1px solid #34465f;min-height:0;background:#1c2d43}
+.atm-photo-frame img{position:absolute;width:190%;max-width:none;height:auto;left:-45%;top:-24%}
+.atm-project-photo figcaption{font-family:monospace;font-size:12px;line-height:1.5;letter-spacing:.04em;color:#aebccd;margin-top:9px}
+@media(max-width:740px){.atm-project-photo{padding:10px}.atm-photo-frame img{width:150%;left:-25%;top:-62%}.atm-project-photo figcaption{margin-top:5px}}
+/* Show the complete installation rather than a zoomed detail. */
+.atm-photo-frame img{position:static;width:100%;height:100%;max-width:100%;object-fit:contain;object-position:center;left:auto;top:auto}
+@media(max-width:740px){.atm-photo-frame img{width:100%;height:100%;left:auto;top:auto}}
