@@ -7,6 +7,8 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/romayffu/',
   cvUrl: '/roma-fu-cv.pdf',
   projectDemo: 'https://digital-reserve-dashboard.vercel.app/',
+  decisionDashboardDemo: 'https://decision-analytics-dashboard-redesign.streamlit.app/',
+  dissertationUrl: '/roma-fu-dissertation.pdf',
   projectRepository: '',
 };
 
