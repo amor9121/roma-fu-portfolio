@@ -670,3 +670,51 @@ button{font-size:12px}
 .atm-security-work{border-color:#4b4564;background:#202a40}
 .atm-security-work .atm-workstream-number{color:#b8dce0}
 @media(max-width:740px){.atm-enterprise-visual{padding:9px;gap:5px}.systems-visual-label{margin:0 1px;font-size:12px}.systems-visual-label span{font-size:12px}.atm-workstreams{gap:4px}.atm-workstream{min-height:0;gap:7px;padding:5px 7px}.atm-workstream-number{flex-basis:18px}.atm-workstream>div{gap:2px}.atm-workstream strong,.atm-workstream small{font-size:12px;line-height:1.3}}
+
+/* Mobile: let the deck handle scrolling so a slide never becomes a nested scroller. */
+@media(max-width:740px){
+  .deck{height:100svh;overflow-x:hidden;overflow-y:auto;scroll-snap-type:y mandatory;scroll-padding-top:0;overscroll-behavior-y:contain}
+  .slide{height:auto;min-height:100svh;padding:88px 22px 78px;align-items:flex-start;justify-content:flex-start;overflow:visible;scroll-snap-align:start;scroll-snap-stop:always}
+  .slide-inner{width:100%;max-width:calc(100vw - 44px);min-width:0;min-height:0}
+  .site-header{height:64px;min-height:64px;padding:0 16px;flex-wrap:nowrap;gap:12px}
+  .site-header .code-logo{width:62px;height:auto}
+  .site-header nav{min-width:0;flex:1;flex-wrap:nowrap;justify-content:flex-start;gap:12px;overflow-x:auto;overflow-y:hidden;white-space:nowrap;scrollbar-width:none}
+  .site-header nav::-webkit-scrollbar{display:none}
+  .site-header nav>a:nth-child(n){flex:0 0 auto;font-size:12px}
+  .site-header nav small{display:none}
+  .site-header .nav-resume{min-height:36px;padding:5px 10px}
+  .social-rail{display:none}
+  .slide-controls{top:auto;right:auto;bottom:12px;left:50%;transform:translateX(-50%);flex-direction:row;gap:9px;padding:8px 11px;border-radius:24px;box-shadow:0 3px 16px #25324712}
+  .slide-controls>span{writing-mode:horizontal-tb;font-size:12px!important}
+  .slide-controls nav{flex-direction:row;gap:8px}
+  .slide-controls nav a{width:7px;height:7px}
+  .slide-key-hint{display:none}
+  .hero-slide .slide-cue{bottom:54px;left:22px}
+  .experience-tabs{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto;gap:16px;height:auto;min-height:0;margin-top:18px}
+  .experience-tablist{height:auto;overflow-x:auto;overflow-y:hidden}
+  .experience-panel{height:auto;min-height:0;overflow:visible;padding-right:0}
+  .experience-slide .experience-panel li{font-size:13px}
+  .hero-slide .hero{width:100%;max-width:calc(100vw - 44px);min-width:0;grid-template-columns:minmax(0,1fr);gap:10px}
+  .hero-slide .hero-code,.hero-slide .hero-note,.hero-slide .slide-cue{display:none}
+  .hero-slide .hero-copy,.hero-slide .hero-side,.hero-slide .hero-visual,.hero-slide .pipeline{width:100%;max-width:calc(100vw - 44px);min-width:0}
+  .hero-slide .hero-intro{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;line-height:1.55;max-width:100%;overflow-wrap:anywhere}
+  .hero-slide .hero-visual,.hero-slide .pipeline{overflow:hidden}
+  .hero-slide .hero-side{padding-bottom:46px}
+  .hero-slide .visual-label,.hero-slide .sources,.hero-slide .visual-footer,.hero-slide .diagram-caption{display:none}
+  .hero-slide .pipeline{padding:12px}
+  .hero-slide .diagram-top{margin-bottom:8px}
+  .hero-slide .flow-line{height:12px;line-height:12px}
+  .hero-slide .layers{grid-template-columns:repeat(3,minmax(0,1fr));min-width:0}
+  .hero-slide .layer{min-width:0;padding:8px 5px;gap:4px}
+  .hero-slide .layer strong{font-size:13px}
+  .hero-slide .layer small{display:none}
+  .hero-slide .output{gap:5px;flex-wrap:wrap}
+  .hero-slide .cat-companion{width:72px;right:6px;bottom:0}
+  .about-toolkit .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .about-toolkit .skills-grid article:last-child{grid-column:1/-1}
+  .about-with-portrait{grid-template-columns:82px minmax(0,1fr);gap:10px 14px}
+  .about-portrait img{width:90px;max-width:100%}
+  .about-copy{min-width:0}
+  .contact-slide .deck-footer{padding-bottom:18px}
+}
+@media(max-width:740px) and (prefers-reduced-motion:reduce){.deck{scroll-behavior:auto;scroll-snap-type:y proximity}}
