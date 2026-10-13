@@ -201,7 +201,7 @@ export default function ProjectCarousel({
             <div className="project-card-action">
               {url && <a className="button project-live" href={url} target="_blank" rel="noopener noreferrer">View project ↗</a>}
               {isDigitalReserve && dissertationUrl && <a className="button project-dissertation" href={assetPath(dissertationUrl)} target="_blank" rel="noopener noreferrer">Read dissertation ↗</a>}
-              {!url && <p className="project-context">Professional experience · no public demo.</p>}
+              {!url && <p className="project-context">Professional experience</p>}
             </div>
           </div>
         </article>;
