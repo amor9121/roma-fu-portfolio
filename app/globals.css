@@ -937,3 +937,16 @@ button{font-size:12px}
   .site-header nav{gap:22px}
   .site-header .nav-resume{margin-left:0}
 }
+
+/* Match iPhone's changing browser viewport and keep the first two slides aligned. */
+@media(max-width:740px){
+  .deck{height:100vh;height:100dvh}
+  .slide{height:100vh;height:100dvh;min-height:100vh;min-height:100dvh}
+  .slide-inner{max-height:calc(100vh - 146px);max-height:calc(100dvh - 146px)}
+  .about-slide .slide-heading{margin-bottom:16px}
+  .about-slide .about-layout{gap:8px}
+  .about-slide .about-copy p:not(.large-copy){line-height:1.45;margin-bottom:7px}
+  .about-slide .about-toolkit{margin-top:9px;padding-top:6px}
+  .about-slide .about-toolkit .skills-grid{row-gap:6px;column-gap:10px}
+  .about-slide .about-toolkit .tags{gap:4px}
+}
