@@ -344,7 +344,6 @@ body{background:var(--paper)}
 .preview-viewport{position:relative;flex:1;overflow:hidden;border:1px solid #dce4ef;border-radius:0 0 7px 7px;background:#fff}
 .explanation-viewport{border:0;border-radius:0;background:transparent}
 .preview-viewport iframe{display:block;width:1440px;height:1000px;border:0;transform:scale(.36);transform-origin:top left;pointer-events:none}
-.dashboard-static-preview{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
 .preview-open{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:16px;background:linear-gradient(transparent 75%,#25324710)}
 .preview-open>span{font-size:12px;background:#fff;color:#345b87;border:1px solid #dce4ef;border-radius:5px;padding:7px 11px;box-shadow:0 3px 12px #2532470c}
 .preview-caption{font-family:monospace;font-size:12px;letter-spacing:.13em;color:#73869f;padding-top:9px}
@@ -422,8 +421,19 @@ body{background:var(--paper)}
 .digital-architecture-preview .architecture-stages>span{padding:8px 10px;background:#1c2d43;border-color:#34465f;color:#b8dce0}
 .digital-architecture-preview .architecture-stages small{color:#aebccd}
 .digital-architecture-preview .architecture-stages b{color:#8298b5}
+/* Keep the three project explanation views on one shared visual system. */
+.digital-architecture-preview,.decision-methods-preview,.atm-systems-preview{height:100%;display:flex;flex-direction:column;justify-content:center;gap:9px;padding:20px;background:radial-gradient(ellipse at 88% 12%,#267b8a66,transparent 42%),linear-gradient(135deg,#0e2036,#142f4c 65%,#164b60);color:#eef5fb}
+.digital-architecture-preview>.eyebrow,.decision-methods-preview>.eyebrow,.atm-systems-preview>.eyebrow{display:block;margin:0;color:#9ccfd8;font:12px/1.4 monospace;letter-spacing:.1em}
+.digital-architecture-preview h4,.decision-methods-preview h4,.atm-systems-preview h4{flex:0 0 auto;margin:0;color:#f4f7fa;font-size:clamp(18px,2.5vw,26px);font-weight:600;line-height:1.1;letter-spacing:-.03em}
+.digital-architecture-preview .architecture-stages,.decision-methods-list,.atm-systems-preview>div{display:flex;width:100%;flex-direction:column;gap:6px;box-sizing:border-box}
+.digital-architecture-preview .architecture-stages>b{display:none}
+.digital-architecture-preview .architecture-stages>span,.decision-methods-list span,.atm-systems-preview span{width:100%;min-width:0;box-sizing:border-box;padding:7px 9px;border:1px solid #b9d4e332;border-radius:5px;background:#ffffff0b}
+.digital-architecture-preview .architecture-stages>span,.decision-methods-list span,.atm-systems-preview span{display:grid;grid-template-columns:25px minmax(0,1fr);column-gap:7px;row-gap:1px;color:#e6eef5;font-size:12px;line-height:1.35}
+.digital-architecture-preview .architecture-stages>b,.digital-architecture-preview .architecture-stages>span>b,.decision-methods-list b,.atm-systems-preview b{grid-row:span 2;color:#9ccfd8;font:12px/1.4 monospace}
+.digital-architecture-preview .architecture-stages strong,.decision-methods-list strong,.atm-systems-preview strong{color:#e6eef5;font-size:12px;font-weight:600}
+.digital-architecture-preview .architecture-stages small,.decision-methods-list small,.atm-systems-preview small{grid-column:2;color:#b2c2d2;font-size:12px;line-height:1.35}
 @media(max-width:740px){.project-entry-intro{gap:7px;padding:9px 13px}.project-entry-kicker{font-size:12px}.project-entry-intro h4{font-size:18px}.digital-entry-flow{gap:3px}.digital-entry-flow span{padding:5px 3px;font-size:12px}.digital-entry-flow b{font-size:12px}}
-@media(max-width:740px){.project-view-switch{gap:2px;padding:2px;margin:8px 0 10px}.project-view-switch button{padding:5px 8px;font-size:12px}.digital-architecture-preview{flex-direction:row;align-items:center;gap:8px;padding:7px}.digital-architecture-preview>.eyebrow{display:none}.digital-architecture-preview h4{flex:0 0 35%;font-size:16px}.digital-architecture-preview .architecture-stages{flex:1}.digital-architecture-preview .architecture-stages>span{display:block;padding:4px;font-size:12px}.digital-architecture-preview .architecture-stages small{display:block;font-size:12px}.digital-architecture-preview .architecture-stages b{font-size:12px}.atm-entry-pillars{gap:4px}.atm-entry-pillars span{min-height:32px;gap:4px;padding:4px;font-size:12px}.atm-entry-pillars b,.atm-entry-pillars strong{font-size:12px}.decision-methods-preview{gap:4px;padding:8px}.decision-methods-preview>.eyebrow{display:none}.decision-methods-preview h4{flex:0 0 auto;font-size:16px}.decision-methods-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.decision-methods-list span{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:5px}.decision-methods-list strong,.decision-methods-list small{font-size:12px;line-height:1.25}.decision-methods-list small{display:none}.atm-systems-preview{gap:5px;padding:8px}.atm-systems-preview>.eyebrow{display:none}.atm-systems-preview h4{font-size:16px}.atm-systems-preview>div{gap:3px}.atm-systems-preview span{grid-template-columns:18px minmax(0,1fr);column-gap:5px;row-gap:0;padding:4px 5px}.atm-systems-preview strong,.atm-systems-preview small{font-size:12px;line-height:1.25}}
+@media(max-width:740px){.project-view-switch{gap:2px;padding:2px;margin:8px 0 10px}.project-view-switch button{padding:5px 8px;font-size:12px}.digital-architecture-preview{flex-direction:row;align-items:center;gap:8px;padding:7px}.digital-architecture-preview>.eyebrow{display:none}.digital-architecture-preview h4{flex:0 0 35%;font-size:16px}.digital-architecture-preview .architecture-stages{flex:1}.digital-architecture-preview .architecture-stages>span{display:block;padding:4px}.digital-architecture-preview .architecture-stages small{display:block;font-size:12px}.digital-architecture-preview .architecture-stages b{font-size:12px}.atm-entry-pillars{gap:4px}.atm-entry-pillars span{min-height:32px;gap:4px;padding:4px;font-size:12px}.atm-entry-pillars b,.atm-entry-pillars strong{font-size:12px}.decision-methods-preview{gap:4px;padding:8px}.decision-methods-preview>.eyebrow{display:none}.decision-methods-preview h4{flex:0 0 auto;font-size:16px}.decision-methods-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.decision-methods-list span{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:5px}.decision-methods-list strong,.decision-methods-list small{font-size:12px;line-height:1.25}.decision-methods-list small{display:none}.atm-systems-preview{gap:5px;padding:8px}.atm-systems-preview>.eyebrow{display:none}.atm-systems-preview h4{font-size:16px}.atm-systems-preview>div{gap:3px}.atm-systems-preview span{grid-template-columns:18px minmax(0,1fr);column-gap:5px;row-gap:0;padding:4px 5px}.atm-systems-preview strong,.atm-systems-preview small{font-size:12px;line-height:1.25}}
 @media(prefers-reduced-motion:reduce){.project-entry-intro{display:none!important}.project-slide.is-active .atm-workstream{animation:none!important}}
 /* Subtle chapter colours distinguish each full-screen page. */
 .about-slide{background:#f0f4f9}
@@ -826,11 +836,25 @@ button{font-size:12px}
 
 /* On phones, use the project artwork for the live page itself, not browser chrome. */
 @media(max-width:740px){
-  .work-slide .carousel-art{height:clamp(140px,22svh,190px);margin:0;padding:0}
+  .work-slide .carousel-art{height:clamp(180px,27svh,230px);margin:0;padding:0}
   .work-slide .dashboard-preview{height:100%;padding:0;background:transparent}
   .work-slide .preview-browser-bar,.work-slide .preview-caption{display:none}
   .work-slide .preview-viewport{height:100%;min-height:0;border:0;border-radius:0;background:#142236}
   .work-slide .preview-viewport iframe{display:block;width:100%;height:100%;transform:none;pointer-events:none}
   .work-slide .project-entry-intro,.work-slide .decision-intro{display:none!important}
   .work-slide .preview-open{display:none}
+
+  /* Keep the three explanatory thumbnails readable on narrow screens. */
+  .work-slide .digital-architecture-preview,.work-slide .decision-methods-preview,.work-slide .atm-systems-preview{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:10px}
+  .work-slide .digital-architecture-preview>.eyebrow,.work-slide .decision-methods-preview>.eyebrow,.work-slide .atm-systems-preview>.eyebrow{display:block;width:100%;min-height:1.3em;font-size:12px;line-height:1.3}
+  .work-slide .digital-architecture-preview h4,.work-slide .decision-methods-preview h4,.work-slide .atm-systems-preview h4{flex:0 0 auto;font-size:17px;line-height:1.15}
+  .work-slide .digital-architecture-preview h4,.work-slide .decision-methods-preview h4,.work-slide .atm-systems-preview h4{width:100%;min-height:1.15em;white-space:nowrap}
+  .work-slide .digital-architecture-preview h4 br,.work-slide .decision-methods-preview h4 br,.work-slide .atm-systems-preview h4 br{display:none}
+  .work-slide .digital-architecture-preview .architecture-stages,.work-slide .decision-methods-list,.work-slide .atm-systems-preview>div{display:flex;width:100%;flex-direction:column;gap:4px;box-sizing:border-box}
+  .work-slide .digital-architecture-preview .architecture-stages>b{display:none}
+  .work-slide .digital-architecture-preview .architecture-stages>span,.work-slide .decision-methods-list span,.work-slide .atm-systems-preview span{width:100%;min-width:0;box-sizing:border-box;padding:5px 7px;border:1px solid #b9d4e332;border-radius:5px;background:#ffffff0b}
+  .work-slide .digital-architecture-preview .architecture-stages>span,.work-slide .decision-methods-list span,.work-slide .atm-systems-preview span{display:grid;grid-template-columns:23px minmax(0,1fr);column-gap:6px;row-gap:1px}
+  .work-slide .digital-architecture-preview .architecture-stages>span>b,.work-slide .decision-methods-list b,.work-slide .atm-systems-preview b{grid-row:span 2}
+  .work-slide .digital-architecture-preview .architecture-stages strong,.work-slide .decision-methods-list strong,.work-slide .atm-systems-preview strong{font-size:12px;line-height:1.25}
+  .work-slide .digital-architecture-preview .architecture-stages small,.work-slide .decision-methods-list small,.work-slide .atm-systems-preview small{display:block;grid-column:2;font-size:12px;line-height:1.25}
 }

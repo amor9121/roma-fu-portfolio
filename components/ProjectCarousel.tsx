@@ -100,29 +100,22 @@ export default function ProjectCarousel({
         >
           <div className="carousel-art">
             {url ? <div className={`dashboard-preview${isExplanationView ? ' explanation-preview' : ''}`}>
-              {!isExplanationView && project.type !== 'decision-dashboard' && <div className="preview-browser-bar">
+              {!isExplanationView && <div className="preview-browser-bar">
                 <span aria-hidden="true">● ● ●</span>
                 <small>{isDigitalReserve ? 'digital-reserve-dashboard.vercel.app' : 'decision-analytics-dashboard-redesign.streamlit.app'}</small>
               </div>}
               <div className={`preview-viewport${isExplanationView ? ' explanation-viewport' : ''}`}>
                 {isDigitalReserve && digitalView === 'architecture' ? <div className="digital-architecture-preview">
                   <span className="eyebrow">CONSERVATION DATA FOUNDATION</span>
-                  <h4>From source<br />to insight.</h4>
+                  <h4>From source<br />{' '}to insight.</h4>
                   <div className="architecture-stages">
-                    <span>01 / Bronze<small>Raw & traceable</small></span>
-                    <b>↓</b>
-                    <span>02 / Silver<small>Clean & connected</small></span>
-                    <b>↓</b>
-                    <span>03 / Gold<small>Ready for analysis</small></span>
+                    <span><b>01</b><strong>Bronze</strong><small>Raw & traceable</small></span>
+                    <span><b>02</b><strong>Silver</strong><small>Clean & connected</small></span>
+                    <span><b>03</b><strong>Gold</strong><small>Ready for analysis</small></span>
                   </div>
-                </div> : project.type === 'decision-dashboard' && analyticsView === 'dashboard' ? <img
-                  className="dashboard-static-preview"
-                  src={assetPath('/decision-analytics-dashboard-preview.jpg')}
-                  alt="Mobile preview of the Decision Analytics Dashboard overview"
-                  loading="lazy"
-                /> : project.type === 'decision-dashboard' && analyticsView === 'analytics' ? <div className="decision-methods-preview">
+                </div> : project.type === 'decision-dashboard' && analyticsView === 'analytics' ? <div className="decision-methods-preview">
                   <p className="eyebrow">WORKSPACE OVERVIEW</p>
-                  <h4>From planning<br />to reporting.</h4>
+                  <h4>From planning<br />{' '}to reporting.</h4>
                   <div className="decision-methods-list">
                     <span><b>01</b><strong>Scheduling</strong><small>Cost, fairness & skills coverage</small></span>
                     <span><b>02</b><strong>Patient analytics</strong><small>Flow, breach factors & prediction</small></span>
@@ -167,7 +160,7 @@ export default function ProjectCarousel({
               <div className="atm-photo-frame">
                 {atmView === 'interface' ? <img className="atm-installation-image" src={assetPath('/atm-interface-focused.png')} alt="Installed ATMs showing the front-end interface developed by Roma Fu" loading="lazy" /> : <div className="atm-systems-preview">
                   <p className="eyebrow">THREE AREAS OF WORK</p>
-                  <h4>ATM systems<br />at scale.</h4>
+                  <h4>ATM systems<br />{' '}at scale.</h4>
                   <div>
                     <span><b>01</b><strong>Customer interface</strong><small>Adopted nationwide in Taiwan</small></span>
                     <span><b>02</b><strong>Monitoring</strong><small>2,000+ ATMs · SQL analysis · performance testing</small></span>
