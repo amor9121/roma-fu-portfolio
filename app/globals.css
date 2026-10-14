@@ -344,6 +344,7 @@ body{background:var(--paper)}
 .preview-viewport{position:relative;flex:1;overflow:hidden;border:1px solid #dce4ef;border-radius:0 0 7px 7px;background:#fff}
 .explanation-viewport{border:0;border-radius:0;background:transparent}
 .preview-viewport iframe{display:block;width:1440px;height:1000px;border:0;transform:scale(.36);transform-origin:top left;pointer-events:none}
+.dashboard-static-preview{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
 .preview-open{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:16px;background:linear-gradient(transparent 75%,#25324710)}
 .preview-open>span{font-size:12px;background:#fff;color:#345b87;border:1px solid #dce4ef;border-radius:5px;padding:7px 11px;box-shadow:0 3px 12px #2532470c}
 .preview-caption{font-family:monospace;font-size:12px;letter-spacing:.13em;color:#73869f;padding-top:9px}
@@ -718,3 +719,118 @@ button{font-size:12px}
   .contact-slide .deck-footer{padding-bottom:18px}
 }
 @media(max-width:740px) and (prefers-reduced-motion:reduce){.deck{scroll-behavior:auto;scroll-snap-type:y proximity}}
+
+/* Mobile presentation: keep each chapter readable within one viewport. */
+@media(max-width:740px){
+  .slide{height:100svh;min-height:600px;padding:82px 22px 64px;align-items:center;justify-content:center;overflow:hidden;scroll-snap-align:start;scroll-snap-stop:always}
+  .slide-inner{max-height:calc(100svh - 146px);overflow:hidden}
+  .slide-heading{margin-bottom:14px}
+  .slide-heading .eyebrow{margin-bottom:5px}
+  .slide-heading h2{font-size:24px;line-height:1.16}
+
+  /* Home: keep the role, short introduction and compact architecture visual. */
+  .hero-slide .hero{gap:7px}
+  .hero-slide h1{font-size:48px;margin:4px 0 7px}
+  .hero-slide .hero-statement{font-size:21px;line-height:1.18;margin-bottom:8px}
+  .hero-slide .hero-role{margin:0 0 6px;font-size:12px}
+  .hero-slide .hero-intro{-webkit-line-clamp:2;margin:0 0 8px;font-size:12px;line-height:1.45}
+  .hero-slide .actions{margin-top:5px;gap:14px}
+  .hero-slide .button.primary{padding:8px 11px}
+  .hero-slide .hero-side{padding-bottom:30px}
+  .hero-slide .cat-companion{width:60px;right:3px}
+  .hero-slide .pipeline{padding:9px}
+  .hero-slide .diagram-top{font-size:12px;margin-bottom:5px}
+  .hero-slide .flow-line{height:8px;line-height:8px}
+  .hero-slide .layer{padding:6px 4px}
+  .hero-slide .layer strong{font-size:12px}
+  .hero-slide .output{padding:5px 7px;font-size:12px}
+
+  /* About: retain the portrait, concise introduction and a compact skills index. */
+  .about-slide .about-layout{grid-template-columns:66px minmax(0,1fr);gap:8px 12px;align-items:start}
+  .about-slide .about-portrait img{width:66px;height:100px;object-fit:cover;object-position:top;border-radius:40px}
+  .about-slide .about-copy .large-copy{font-size:15px;line-height:1.3;margin-bottom:5px}
+  .about-slide .about-copy p:not(.large-copy){font-size:12px;line-height:1.4;margin-bottom:5px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+  .about-slide .about-copy .text-link,.about-slide .case-steps,.about-slide .personality-note{display:none}
+  .about-slide .about-toolkit{margin-top:10px;padding-top:8px}
+  .about-slide .about-toolkit>h3{font-size:12px;margin-bottom:6px}
+  .about-slide .about-toolkit .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 10px;margin:0}
+  .about-slide .about-toolkit .skills-grid article:last-child{grid-column:1/-1}
+  .about-slide .about-toolkit .skills-grid h3{font-size:12px;margin:0 0 3px}
+  .about-slide .about-toolkit .tags{gap:4px;margin:0}
+  .about-slide .about-toolkit .tags li{font-size:12px;line-height:1.35;padding:2px 5px}
+
+  /* Experience: show the strongest two points for each role and keep education beside itself. */
+  .experience-tabs{display:block;height:auto;min-height:0;margin-top:10px}
+  .experience-tablist{height:auto;display:flex;flex-direction:row;overflow-x:auto;margin:0 0 10px;border:0;border-bottom:1px solid #dce4ef}
+  .experience-tablist button{flex:0 0 auto;padding:7px 9px;margin:0 0 -1px;font-size:12px}
+  .experience-panel{height:auto;min-height:0;max-height:none;overflow:visible;padding:0}
+  .experience-kind{margin-bottom:5px}
+  .experience-panel h3{font-size:16px;margin-bottom:4px}
+  .experience-date{font-size:12px;margin-bottom:8px}
+  .experience-date span{display:inline;margin:0}
+  .experience-panel ul{gap:5px}
+  .experience-panel li{font-size:12px;line-height:1.4;padding-left:14px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+  .experience-panel li:nth-child(n+3){display:none}
+  .education-block{grid-template-columns:1fr;gap:6px;margin-top:10px;padding-top:8px}
+  .education-block>h3{font-size:12px}
+  .education-list{grid-template-columns:1.15fr 1fr;gap:8px}
+  .education-list h4{font-size:12px;line-height:1.3;margin-bottom:3px}
+  .education-list article>p:not(.education-date),.education-list small,.education-date{font-size:12px;line-height:1.35;margin-bottom:3px}
+
+  /* Work: keep the preview prominent and trim supporting copy to its key points. */
+  .work-slide .carousel-art{height:150px;margin:0 8px;padding:8px}
+  .work-slide .carousel-copy{padding:10px 12px}
+  .work-slide .carousel-copy .eyebrow{margin-bottom:4px;line-height:1.3}
+  .work-slide .carousel-copy h3{font-size:18px;line-height:1.2;margin:0 0 5px}
+  .work-slide .project-view-switch{margin:0 0 5px}
+  .work-slide .carousel-copy>p:not(.eyebrow){font-size:12px;line-height:1.4;margin:0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+  .work-slide .carousel-copy .tags{gap:4px;margin:6px 0}
+  .work-slide .carousel-copy .tags li:nth-child(n+4){display:none}
+  .work-slide .carousel-copy .tags li{font-size:12px;padding:2px 5px}
+  .work-slide .project-card-action{min-height:0;padding-top:2px;gap:6px}
+  .work-slide .project-card-action .project-live,.work-slide .project-card-action .project-dissertation{padding:6px 9px;line-height:1.4}
+  .work-slide .carousel-controls{padding-top:7px}
+  .work-slide .carousel-hint{display:none}
+  .work-slide .slide-footnote{display:none}
+
+  /* Contact: keep the invitation, links and illustration on the same screen. */
+  .contact-slide>.slide-inner{height:auto;max-height:calc(100svh - 146px)}
+  .contact-layout{grid-template-columns:1fr 130px;gap:8px;align-items:center}
+  .contact-closing{padding:0;justify-content:center}
+  .contact-closing>.eyebrow{margin-bottom:7px}
+  .contact-status{font-size:12px;line-height:1.35;margin-bottom:8px}
+  .contact-closing h2{font-size:30px;line-height:1.12;margin-bottom:8px}
+  .contact-description{font-size:12px;line-height:1.45;margin-bottom:9px}
+  .contact-email{padding:7px 10px;font-size:12px}
+  .closing-links{gap:12px;margin-top:9px;font-size:12px;flex-wrap:wrap}
+  .contact-illustration{max-width:130px;width:100%}
+  .contact-illustration figcaption{font-size:12px;line-height:1.3}
+  .contact-slide .deck-footer{padding:8px 0 0;margin-top:8px;border-top:1px solid #dce4ef}
+  .contact-slide .deck-footer .code-logo{width:54px}
+  .footer-credit{font-size:12px;line-height:1.3}
+  .footer-credit small{display:none}
+  .deck-footer>a:last-child{font-size:12px}
+}
+
+@media(max-width:740px) and (max-height:740px){
+  .slide{padding-top:78px;padding-bottom:58px}
+  .slide-inner{max-height:calc(100svh - 136px)}
+  .hero-slide .hero-statement{font-size:19px}
+  .hero-slide .hero-intro{-webkit-line-clamp:2}
+  .hero-slide .hero-side{padding-bottom:22px}
+  .work-slide .carousel-art{height:125px}
+  .contact-illustration{max-width:105px}
+  .contact-closing h2{font-size:27px}
+  .contact-slide>.slide-inner{max-height:calc(100svh - 136px)}
+}
+
+/* On phones, use the project artwork for the live page itself, not browser chrome. */
+@media(max-width:740px){
+  .work-slide .carousel-art{height:clamp(140px,22svh,190px);margin:0;padding:0}
+  .work-slide .dashboard-preview{height:100%;padding:0;background:transparent}
+  .work-slide .preview-browser-bar,.work-slide .preview-caption{display:none}
+  .work-slide .preview-viewport{height:100%;min-height:0;border:0;border-radius:0;background:#142236}
+  .work-slide .preview-viewport iframe{display:block;width:100%;height:100%;transform:none;pointer-events:none}
+  .work-slide .project-entry-intro,.work-slide .decision-intro{display:none!important}
+  .work-slide .preview-open{display:none}
+}

@@ -100,7 +100,7 @@ export default function ProjectCarousel({
         >
           <div className="carousel-art">
             {url ? <div className={`dashboard-preview${isExplanationView ? ' explanation-preview' : ''}`}>
-              {!isExplanationView && <div className="preview-browser-bar">
+              {!isExplanationView && project.type !== 'decision-dashboard' && <div className="preview-browser-bar">
                 <span aria-hidden="true">● ● ●</span>
                 <small>{isDigitalReserve ? 'digital-reserve-dashboard.vercel.app' : 'decision-analytics-dashboard-redesign.streamlit.app'}</small>
               </div>}
@@ -115,7 +115,12 @@ export default function ProjectCarousel({
                     <b>↓</b>
                     <span>03 / Gold<small>Ready for analysis</small></span>
                   </div>
-                </div> : project.type === 'decision-dashboard' && analyticsView === 'analytics' ? <div className="decision-methods-preview">
+                </div> : project.type === 'decision-dashboard' && analyticsView === 'dashboard' ? <img
+                  className="dashboard-static-preview"
+                  src={assetPath('/decision-analytics-dashboard-preview.jpg')}
+                  alt="Mobile preview of the Decision Analytics Dashboard overview"
+                  loading="lazy"
+                /> : project.type === 'decision-dashboard' && analyticsView === 'analytics' ? <div className="decision-methods-preview">
                   <p className="eyebrow">WORKSPACE OVERVIEW</p>
                   <h4>From planning<br />to reporting.</h4>
                   <div className="decision-methods-list">
@@ -157,7 +162,7 @@ export default function ProjectCarousel({
                   <span>Open website ↗</span>
                 </a>}
               </div>
-              {!isExplanationView && <span className="preview-caption">LIVE WEBSITE PREVIEW</span>}
+              {isDigitalReserve && !isExplanationView && <span className="preview-caption">LIVE WEBSITE PREVIEW</span>}
             </div> : <div className={`atm-project-visual${atmView === 'systems' ? ' is-systems-view' : ''}`}>
               <div className="atm-photo-frame">
                 {atmView === 'interface' ? <img className="atm-installation-image" src={assetPath('/atm-interface-focused.png')} alt="Installed ATMs showing the front-end interface developed by Roma Fu" loading="lazy" /> : <div className="atm-systems-preview">
