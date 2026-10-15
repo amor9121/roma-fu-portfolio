@@ -2,10 +2,10 @@
 import { useRef, useState } from 'react';
 const jobs = [
  {company:'Diebold Nixdorf',role:'Software Engineer',date:'Aug 2018 — Aug 2025',location:'Taipei, Taiwan',points:[
+ 'Completed the Global Honor Project (Windows EOS security) to a tight deadline, coordinating client, APAC security, project management, software and hardware teams. Prevented penalties for the local ATM environment and prepared documentation for audit and reproducibility.',
  'Maintained an event monitoring system supporting 2,000 ATMs, using SQL analysis and performance, load and stress testing to identify peak-hour constraints and support capacity planning.',
- 'Developed and maintained web applications, servers and databases that surfaced machine event data to operations teams, improving stability and event reporting.',
- 'Delivered an international Windows EOS security project, coordinating client, APAC security, software and hardware teams, with documentation supporting audit and reproducibility.',
- 'Led usability analysis and optimisation of the Taiwanese ATM front-end interface; the design was adopted nationwide.'
+ 'Led usability analysis and optimisation of the Taiwanese ATM front-end interface; the design was adopted nationwide.',
+ 'Developed and maintained web applications, servers and databases that surfaced machine event data to operations teams, improving stability and event reporting.'
  ]},
  {company:'Beyond Media Global',role:'Front-End Web Developer',date:'Feb 2017 — Jul 2018',location:'Taipei, Taiwan',points:[
  'Developed and maintained 15+ commercial web applications using JavaScript, React, MySQL and AWS.',

@@ -8,7 +8,7 @@ const projects = [
     title: 'Digital Reserve Platform',
     label: 'DISSERTATION · CONSERVATION DATA PLATFORM',
     description: 'A conservation data platform bringing together a live reserve dashboard and the lakehouse architecture behind it, developed as part of my dissertation.',
-    tags: ['Next.js', 'NestJS', 'Databricks', 'Delta Lake', 'Azure'],
+    tags: ['PySpark', 'Databricks', 'Delta Lake', 'MLflow', 'Next.js', 'NestJS', 'Azure'],
     type: 'digital-reserve',
   },
   {
@@ -107,11 +107,20 @@ export default function ProjectCarousel({
               <div className={`preview-viewport${isExplanationView ? ' explanation-viewport' : ''}`}>
                 {isDigitalReserve && digitalView === 'architecture' ? <div className="digital-architecture-preview">
                   <span className="eyebrow">CONSERVATION DATA FOUNDATION</span>
-                  <h4>From source<br />{' '}to insight.</h4>
-                  <div className="architecture-stages">
-                    <span><b>01</b><strong>Bronze</strong><small>Raw & traceable</small></span>
-                    <span><b>02</b><strong>Silver</strong><small>Clean & connected</small></span>
-                    <span><b>03</b><strong>Gold</strong><small>Ready for analysis</small></span>
+                  <h4>From field data to insight.</h4>
+                  <div className="architecture-flow" aria-label="Data architecture flow">
+                    <div className="architecture-row" role="group" aria-label="Data acquisition">
+                      <span className="architecture-phase"><b>01</b><small>ACQUIRE</small></span>
+                      <div className="architecture-nodes"><span><strong>Data sources</strong><small>IoT + geospatial</small></span><i aria-hidden="true">→</i><span><strong>Databricks Volume</strong><small>Raw storage</small></span><i aria-hidden="true">→</i><span><strong>Batch ingestion</strong><small>Scheduled load</small></span></div>
+                    </div>
+                    <div className="architecture-row" role="group" aria-label="Medallion pipeline">
+                      <span className="architecture-phase"><b>02</b><small>TRANSFORM</small></span>
+                      <div className="architecture-nodes"><span><strong>Bronze</strong><small>Raw preservation</small></span><i aria-hidden="true">→</i><span><strong>Silver</strong><small>Clean + standardise</small></span><i aria-hidden="true">→</i><span><strong>Gold</strong><small>Analytics-ready</small></span></div>
+                    </div>
+                    <div className="architecture-row" role="group" aria-label="Data serving">
+                      <span className="architecture-phase"><b>03</b><small>SERVE</small></span>
+                      <div className="architecture-nodes"><span><strong>PostgreSQL</strong><small>Serving database</small></span><i aria-hidden="true">→</i><span><strong>REST API</strong><small>Data access</small></span><i aria-hidden="true">→</i><span><strong>Dashboard</strong><small>Visualisation</small></span></div>
+                    </div>
                   </div>
                 </div> : project.type === 'decision-dashboard' && analyticsView === 'analytics' ? <div className="decision-methods-preview">
                   <p className="eyebrow">WORKSPACE OVERVIEW</p>
@@ -187,7 +196,7 @@ export default function ProjectCarousel({
               <button type="button" onClick={() => setDigitalView('architecture')} aria-pressed={digitalView === 'architecture'}>Architecture</button>
             </nav>}
             {project.type === 'decision-dashboard' && <nav className="project-view-switch" aria-label="Decision Analytics views">
-              <button type="button" onClick={() => setAnalyticsView('dashboard')} aria-pressed={analyticsView === 'dashboard'}>Live dashboard</button>
+              <button type="button" onClick={() => setAnalyticsView('dashboard')} aria-pressed={analyticsView === 'dashboard'}>Dashboard</button>
               <button type="button" onClick={() => setAnalyticsView('analytics')} aria-pressed={analyticsView === 'analytics'}>Analytics</button>
             </nav>}
             {project.type === 'enterprise' && <nav className="project-view-switch" aria-label="ATM project views">
