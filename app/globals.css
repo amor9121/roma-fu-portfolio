@@ -953,6 +953,13 @@ button{font-size:12px}
 
 .about-slide .about-copy .text-link{margin-top:8px}
 
+/* Make vertical slide navigation easier on touch screens. */
+@media(max-width:740px){
+  .deck{scroll-snap-type:y proximity;overscroll-behavior-y:auto;-webkit-overflow-scrolling:touch}
+  .slide{scroll-snap-stop:normal}
+  .hero-slide>.slide-inner,.about-slide>.slide-inner,.experience-slide .experience-panel{overscroll-behavior-y:auto}
+}
+
 /* Keep the DATA / SOFTWARE / INSIGHT orbit tags outlined, without connector lines. */
 .hero-slide .hero-orbit span{padding:5px 10px;border:1px solid #40566f;border-radius:999px;background:#142236;color:#b8c9dc;box-shadow:0 0 0 3px #111c2d}
 .hero-slide .hero-orbit span:before{content:"";position:absolute;top:-3px;right:-3px;width:5px;height:5px;border:2px solid #142236;border-radius:50%;background:#9ccfd8;box-shadow:0 0 6px #9ccfd870}
